@@ -54,7 +54,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         User user = null;
         // User not found in database so return null
         if (cursor == null || cursor.getCount() == 0)
-            return null;
+            return user;
 
         // Otherwise move to first row, assign it to user and return it
         cursor.moveToFirst();

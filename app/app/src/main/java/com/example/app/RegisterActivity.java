@@ -14,6 +14,7 @@ import org.mindrot.jbcrypt.BCrypt;
 public class RegisterActivity extends AppCompatActivity {
 
     DatabaseHandler db = new DatabaseHandler(this);
+    String salt = BCrypt.gensalt();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,21 +29,21 @@ public class RegisterActivity extends AppCompatActivity {
             String password = ((EditText) findViewById(R.id.pw_reg)).getText().toString();
             String passwordConfirm = ((EditText) findViewById(R.id.pwConfirm_reg)).getText().toString();
 
-
-            if (!checkCredentials(username, email, password, passwordConfirm)) {
+            // Check if the credentials are valid
+            if (!checkCredentials(username, email, password, passwordConfirm))
                 return;
-            }
 
             // Hash the password
-            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+            String hashedPassword = BCrypt.hashpw(password, salt);
 
             // Create a new User
             User user = new User(username, email, hashedPassword);
 
             // Store the User in the database
             storeCredentials(user);
+            Log.d("RegisterActivity", "onCreate: " + user.getHashedPW());
 
-            // Send you to the LoginActivity
+            // Sends you to the LoginActivity
             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(intent);
         });
@@ -97,5 +98,11 @@ public class RegisterActivity extends AppCompatActivity {
         // Stores the User in the database
         db.addUser(user);
         Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
+
+        // Emptying the text fields before navigating to login
+        ((EditText) findViewById(R.id.username_reg)).setText("");
+        ((EditText) findViewById(R.id.email_reg)).setText("");
+        ((EditText) findViewById(R.id.pw_reg)).setText("");
+        ((EditText) findViewById(R.id.pwConfirm_reg)).setText("");
     }
 }
