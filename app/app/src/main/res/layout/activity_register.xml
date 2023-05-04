@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +18,7 @@
         app:layout_constraintVertical_bias="0.054" />
 
     <TextView
-        android:id="@+id/username_text"
+        android:id="@+id/usernameReg_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username:"
@@ -29,7 +30,7 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <EditText
-        android:id="@+id/username_in"
+        android:id="@+id/username_reg"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:ems="10"
@@ -43,7 +44,7 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <TextView
-        android:id="@+id/email_text"
+        android:id="@+id/emailReg_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email:"
@@ -55,7 +56,7 @@
         app:layout_constraintVertical_bias="0.3" />
 
     <EditText
-        android:id="@+id/email_in"
+        android:id="@+id/email_reg"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:ems="10"
@@ -69,7 +70,7 @@
         app:layout_constraintVertical_bias="0.3" />
 
     <TextView
-        android:id="@+id/pw_text"
+        android:id="@+id/pwReg_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password:"
@@ -81,7 +82,7 @@
         app:layout_constraintVertical_bias="0.4" />
 
     <EditText
-        android:id="@+id/pw_in"
+        android:id="@+id/pw_reg"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:ems="10"
@@ -95,7 +96,7 @@
         app:layout_constraintVertical_bias="0.4" />
 
     <TextView
-        android:id="@+id/pwConfirm_text"
+        android:id="@+id/pwConfirmReg_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirm Password:"
@@ -107,7 +108,7 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <EditText
-        android:id="@+id/pwConfirm_in"
+        android:id="@+id/pwConfirm_reg"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:ems="10"
@@ -121,7 +122,7 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/submit_button"
+        android:id="@+id/submitReg_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
