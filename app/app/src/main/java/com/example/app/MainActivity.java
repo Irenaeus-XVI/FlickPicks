@@ -11,6 +11,7 @@ import android.net.NetworkCapabilities;
 import android.net.NetworkRequest;
 import android.os.Build;
 import android.os.Bundle;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -39,11 +40,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAvailable(Network network) {
                 // Network is now available
+                Toast.makeText(MainActivity.this, "Internet is found", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onLost(Network network) {
-                // Network is lost
+                // Network is no longer available
+                Toast.makeText(MainActivity.this, "No Internet", Toast.LENGTH_SHORT).show();
             }
         };
 
