@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,30 +14,31 @@ import org.mindrot.jbcrypt.BCrypt;
 
 public class LoginActivity extends AppCompatActivity {
 
-    DatabaseHandler db = new DatabaseHandler(this);
-    String salt = BCrypt.gensalt();
-    PreferenceHandler prefHandler = new PreferenceHandler(this);
+    DatabaseHandler dbHandler;
+    PreferenceHandler prefHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        dbHandler = new DatabaseHandler(this);
+        prefHandler = new PreferenceHandler(this);
         // Sends you to Register page when you press on Register button
-        Button registerButton = (Button) findViewById(R.id.gotoReg_button);
+        Button registerButton =  findViewById(R.id.gotoReg_button);
         registerButton.setOnClickListener(view -> {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
         });
 
         // Checks your credentials when you press on Login button
-        Button loginButton = (Button) findViewById(R.id.login_button);
+        Button loginButton =  findViewById(R.id.login_button);
         loginButton.setOnClickListener(view -> {
             // Get the email and password from the text fields
             String email = ((EditText) findViewById(R.id.email_in)).getText().toString();
             String password = ((EditText) findViewById(R.id.pw_in)).getText().toString();
 
-            User user = db.getUser(email);
+            User user = dbHandler.getUser(email);
             if (!checkCredentials(email, password) || user == null)
                 return;
 
@@ -49,11 +48,7 @@ public class LoginActivity extends AppCompatActivity {
 //             Check if the password is correct
             if (BCrypt.checkpw(password, hashedPassword)) {
 //                 If the password is correct, send you to the Homepage
-                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
-                ((EditText) findViewById(R.id.email_in)).setText("");
-                ((EditText) findViewById(R.id.pw_in)).setText("");
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
+                loginSuccess(user);
             } else {
                 // If the password is incorrect, print an error message
                 Toast.makeText(this, "Incorrect Password", Toast.LENGTH_SHORT).show();
@@ -76,11 +71,27 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
         // Check if the email is in the database
-        if (db.getUser(email) == null) {
+        if (dbHandler.getUser(email) == null) {
             Toast.makeText(this, "Email not found", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
+    }
+
+    private void loginSuccess(User user) {
+        Toast.makeText(this, "Login succeeded", Toast.LENGTH_SHORT).show();
+
+        // Emptying the text fields before navigating to main activity
+        ((EditText) findViewById(R.id.email_in)).setText("");
+        ((EditText) findViewById(R.id.pw_in)).setText("");
+
+        // Saving the user's email in the shared preferences
+        prefHandler.setEmail(user.getEmail());
+        prefHandler.setLoggedIn(true);
+
+        // Navigating to main activity
+        Intent intent = new Intent(LoginActivity.this, UpdateUserActivity.class);
+        startActivity(intent);
     }
 
 }

@@ -20,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MovieList extends AppCompatActivity {
+public class MovieListActivity extends AppCompatActivity {
 
 
     private RecyclerView movieRecyclerView;
@@ -53,13 +53,13 @@ public class MovieList extends AppCompatActivity {
                     movieList.addAll(response.body().getResults());
                     movieAdapter.notifyDataSetChanged();
                 } else {
-                    Toast.makeText(MovieList.this, "Failed to get movies", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MovieListActivity.this, "Failed to get movies", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<MovieResponse> call, Throwable t) {
-                Toast.makeText(MovieList.this, "Failed to get movies", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MovieListActivity.this, "Failed to get movies", Toast.LENGTH_SHORT).show();
             }
         });
 

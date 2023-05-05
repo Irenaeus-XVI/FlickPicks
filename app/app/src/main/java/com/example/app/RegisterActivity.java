@@ -21,7 +21,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        Button submitButton = (Button) findViewById(R.id.submitReg_button);
+        Button submitButton = findViewById(R.id.submitReg_button);
         submitButton.setOnClickListener(view -> {
             // Check the credentials if it's valid then move on otherwise print an error message
             String username = ((EditText) findViewById(R.id.username_reg)).getText().toString();
@@ -76,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
         String emailPattern = "@gmail.com";
         boolean patternMatching = false;
         for (int i = 0; i < email.length(); i++) {
-            if (email.charAt(i) == '@' && i + 10 == email.length())
+            if (email.charAt(i) == '@' && email.substring(i).equals(emailPattern))
                 patternMatching = true;
         }
         // If the email is not a gmail, print an error message

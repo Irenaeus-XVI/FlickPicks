@@ -32,7 +32,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".MovieList"
+            android:name=".MovieListActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

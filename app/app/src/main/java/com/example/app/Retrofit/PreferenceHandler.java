@@ -6,7 +6,8 @@ import android.content.SharedPreferences;
 public class PreferenceHandler {
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
-    private static final String PREF_EMAIL = "email";
+    private static final String PREF_EMAIL = "none";
+    private static final boolean PREF_LOGGED_IN = false;
 
     public PreferenceHandler(Context context) {
         pref = context.getSharedPreferences("AppPref", Context.MODE_PRIVATE);
@@ -15,6 +16,11 @@ public class PreferenceHandler {
 
     public void setEmail(String email) {
         editor.putString(PREF_EMAIL, email);
+        editor.apply();
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        editor.putBoolean("loggedIn", loggedIn);
         editor.apply();
     }
 

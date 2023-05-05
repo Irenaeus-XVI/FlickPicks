@@ -13,9 +13,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.app.Retrofit.PreferenceHandler;
+
 
 public class MainActivity extends AppCompatActivity {
 
+    PreferenceHandler prefHandler;
     private checkConnection broadcastReceiver ;
     private ConnectivityManager.NetworkCallback networkCallback;
     @Override
@@ -23,14 +26,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Sending you to LoginActivity
-
-
-
+        prefHandler = new PreferenceHandler(this);
 
         //creating the boradcast reciever
-
         broadcastReceiver = new checkConnection();
+
         //creating a connectivity manager
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -39,8 +39,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAvailable(Network network) {
                 // Network is now available
-                Intent intent = new Intent(MainActivity.this, MovieList.class);
-                startActivity(intent);
+                if(prefHandler.getEmail().equals("none")) {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, MovieListActivity.class);
+                    startActivity(intent);
+                }
                 Toast.makeText(MainActivity.this, "Internet is found", Toast.LENGTH_SHORT).show();
             }
 
