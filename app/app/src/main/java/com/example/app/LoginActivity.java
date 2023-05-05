@@ -10,12 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.app.Retrofit.PreferenceHandler;
+
 import org.mindrot.jbcrypt.BCrypt;
 
 public class LoginActivity extends AppCompatActivity {
 
     DatabaseHandler db = new DatabaseHandler(this);
     String salt = BCrypt.gensalt();
+    PreferenceHandler prefHandler = new PreferenceHandler(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +52,8 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
                 ((EditText) findViewById(R.id.email_in)).setText("");
                 ((EditText) findViewById(R.id.pw_in)).setText("");
-//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
             } else {
                 // If the password is incorrect, print an error message
                 Toast.makeText(this, "Incorrect Password", Toast.LENGTH_SHORT).show();
