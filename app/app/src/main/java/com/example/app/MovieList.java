@@ -49,7 +49,7 @@ public class MovieList extends AppCompatActivity {
         call.enqueue(new Callback<MovieResponse>() {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
-                if (response.isSuccessful()) {
+                if (response.isSuccessful() && response.body() != null) {
                     movieList.addAll(response.body().getResults());
                     movieAdapter.notifyDataSetChanged();
                 } else {

@@ -1,9 +1,7 @@
 package com.example.app.Model;
 
 
-
 import com.google.gson.annotations.SerializedName;
-
 
 
 import com.google.gson.annotations.SerializedName;
@@ -14,10 +12,6 @@ import com.google.gson.annotations.SerializedName;
 public class Movie {
     @SerializedName("title")
     private String title;
-    @SerializedName("name")
-    private String name;
-
-
     @SerializedName("poster_path")
     private String posterPath;
 
@@ -64,16 +58,6 @@ public class Movie {
 
     public void setVoteAverage(float voteAverage) {
         this.voteAverage = voteAverage;
-    }
-
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    public String getName() {
-        return name;
     }
 
 }

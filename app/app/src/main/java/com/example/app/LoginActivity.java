@@ -47,6 +47,8 @@ public class LoginActivity extends AppCompatActivity {
             if (BCrypt.checkpw(password, hashedPassword)) {
 //                 If the password is correct, send you to the Homepage
                 Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+                ((EditText) findViewById(R.id.email_in)).setText("");
+                ((EditText) findViewById(R.id.pw_in)).setText("");
 //                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 //                startActivity(intent);
             } else {
@@ -61,17 +63,17 @@ public class LoginActivity extends AppCompatActivity {
     public boolean checkCredentials(String email, String password) {
 
         // Check if email is valid and not a very large input to not lag the app
-        if(email.length() > 50 || email.length() < 4) {
+        if (email.length() > 50 || email.length() < 4) {
             Toast.makeText(this, "Email must be between 4 and 50 characters", Toast.LENGTH_SHORT).show();
             return false;
         }
         // Same thing for password
-        if(password.length() > 20 || password.length() < 4) {
+        if (password.length() > 20 || password.length() < 4) {
             Toast.makeText(this, "Password must be between 4 and 20 characters", Toast.LENGTH_SHORT).show();
             return false;
         }
         // Check if the email is in the database
-        if(db.getUser(email) == null) {
+        if (db.getUser(email) == null) {
             Toast.makeText(this, "Email not found", Toast.LENGTH_SHORT).show();
             return false;
         }

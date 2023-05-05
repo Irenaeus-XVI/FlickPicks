@@ -1,6 +1,9 @@
 
 package com.example.app.Adapters;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,9 +28,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         // view holder code
 
 
-        private ImageView movieImage;
-        public static  TextView movieTitle;
-        public static TextView movieName;
+        private ImageView movieImage, favIcon;
+        private TextView movieTitle;
         private TextView movieDescription;
         private RatingBar movieRating;
 
@@ -36,14 +38,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
             movieImage = itemView.findViewById(R.id.movie_image);
             movieTitle = itemView.findViewById(R.id.movie_title);
-            movieName = itemView.findViewById(R.id.movie_title);
             movieDescription = itemView.findViewById(R.id.movie_description);
             movieRating = itemView.findViewById(R.id.movie_rating);
+            favIcon = itemView.findViewById(R.id.fav_icon);
         }
     }
 
 
     public MovieAdapter(List<Movie> movieList) {
+        this.movieList = movieList;
+    }
+
+    public void setMovieList(List<Movie> movieList) {
         this.movieList = movieList;
     }
 
@@ -59,10 +65,27 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         Movie movie = movieList.get(position);
 
         holder.movieTitle.setText(movie.getTitle());
-
-
         holder.movieDescription.setText(movie.getOverview());
         holder.movieRating.setRating(movie.getVoteAverage() / 2);
+
+        holder.favIcon.setOnClickListener(new View.OnClickListener() {
+            boolean isFav = false;
+
+            @Override
+            public void onClick(View v) {
+
+                ImageView favIcon = holder.favIcon;
+                if (!isFav) {
+                    favIcon.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+                    isFav = true;
+                } else {
+                    favIcon.setColorFilter(Color.parseColor("grey"), PorterDuff.Mode.SRC_IN);
+                    isFav = false;
+                }
+            }
+        });
+
+//        Log.d("MovieAdapter", "isCalled " + "once");
         Glide.with(holder.itemView.getContext())
                 .load("https://image.tmdb.org/t/p/w500" + movie.getPosterPath())
                 .placeholder(R.drawable.ic_placeholder)
