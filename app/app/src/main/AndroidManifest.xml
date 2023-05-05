@@ -24,6 +24,15 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
             </intent-filter>
         </receiver>
+        <activity
+            android:name=".UpdateActivity"
+            android:exported="false"
+            android:label="@string/title_activity_update"
+            android:theme="@style/Theme.MyProject.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <activity
             android:name=".MovieList"
