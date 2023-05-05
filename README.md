@@ -1,1 +1,1 @@
-# Mobile-Final
+# An android application under the college course "Mobile Application"
