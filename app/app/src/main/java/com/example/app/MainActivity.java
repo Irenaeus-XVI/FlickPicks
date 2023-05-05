@@ -24,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Sending you to LoginActivity
-        Intent intent = new Intent(MainActivity.this, MovieList.class);
-        startActivity(intent);
+
 
 
 
@@ -40,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAvailable(Network network) {
                 // Network is now available
+                Intent intent = new Intent(MainActivity.this, MovieList.class);
+                startActivity(intent);
                 Toast.makeText(MainActivity.this, "Internet is found", Toast.LENGTH_SHORT).show();
             }
 
