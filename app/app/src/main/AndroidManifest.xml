@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         tools:targetApi="31">
+        <service
+            android:name=".NotificationJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false">
@@ -51,8 +56,8 @@
             android:exported="false" />
         <activity
             android:name=".SplashScreen.SplashActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

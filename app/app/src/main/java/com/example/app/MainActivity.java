@@ -2,6 +2,9 @@ package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -19,15 +22,15 @@ import com.example.app.Retrofit.PreferenceHandler;
 public class MainActivity extends AppCompatActivity {
 
     PreferenceHandler prefHandler;
-    private checkConnection broadcastReceiver ;
+    private checkConnection broadcastReceiver;
     private ConnectivityManager.NetworkCallback networkCallback;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         prefHandler = new PreferenceHandler(this);
-        prefHandler.setEmail("none");
         //creating the boradcast reciever
         broadcastReceiver = new checkConnection();
 
@@ -39,21 +42,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAvailable(Network network) {
                 // Network is now available
-                if(prefHandler.getEmail().equals("none")) {
+                if (prefHandler.getEmail().equals("none")) {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
-                }
-                else {
+
+
+                } else {
                     Intent intent = new Intent(MainActivity.this, MovieListActivity.class);
                     startActivity(intent);
                 }
-                Toast.makeText(MainActivity.this, "Internet is found", Toast.LENGTH_SHORT).show();
+
             }
+
 
             @Override
             public void onLost(Network network) {
                 // Network is no longer available
                 Toast.makeText(MainActivity.this, "No Internet", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         };
 

@@ -36,7 +36,7 @@ public class MovieListActivity extends AppCompatActivity {
         movieRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         movieList = new ArrayList<>();
-        movieAdapter = new MovieAdapter(movieList);
+        movieAdapter = new MovieAdapter(this, movieList);
         movieRecyclerView.setAdapter(movieAdapter);
 
         getPopularMovies();

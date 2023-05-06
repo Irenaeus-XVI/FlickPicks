@@ -24,8 +24,8 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
             android:layout_marginTop="70dp"
+            android:text="@string/app_name"
             android:textColor="#fff"
             android:textSize="75sp"
             android:textStyle="bold" />
@@ -35,8 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="A Hero Can Be Anyone"
             android:layout_marginBottom="30dp"
+            android:text="A Hero Can Be Anyone"
             android:textAlignment="center"
             android:textColor="@color/silver"
             android:textSize="18sp"
@@ -55,8 +55,8 @@
             android:hint="Email Address"
             android:inputType="textPersonName"
             android:padding="10dp"
-            android:textColorHint="#858585"
             android:textColor="@color/silver"
+            android:textColorHint="#858585"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -74,8 +74,8 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:textColorHint="#858585"
             android:textColor="@color/silver"
+            android:textColorHint="#858585"
             android:textSize="16sp" />
 
 
@@ -141,8 +141,6 @@
                 android:layout_weight="0.5"
                 android:backgroundTint="@color/light_purple"
                 android:drawableStart="@drawable/google"
-                android:drawablePadding="10dp"
-                android:padding="10dp"
                 android:text="Google login"
                 android:textColor="#fff"
                 android:textStyle="bold" />
@@ -155,8 +153,6 @@
                 android:layout_weight="0.5"
                 android:backgroundTint="@color/light_purple"
                 android:drawableStart="@drawable/facebook"
-                android:drawablePadding="10dp"
-                android:padding="10dp"
                 android:text="Facebook login"
                 android:textColor="#fff"
                 android:textStyle="bold" />
