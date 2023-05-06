@@ -10,10 +10,10 @@
     <string name="google_login">حساب جوجل</string>
     <string name="facebook_login">حساب فيسبوك</string>
     <string name="sign_up">إنشاء حساب جديد</string>
-    <string name="slogan2">بوابتك لعالم السينما</string>
+    <string name="slogan2">بوابتك لملجأ السينما</string>
     <string name="name">اسم المستخدم</string>
     <string name="confirm_password">تأكيد كلمة المرور</string>
-    <string name="have_account">حساب جديد</string>
+    <string name="have_account">تسجيل الدخول</string>
     <string name="sign_up2">إنشاء حساب</string>
     <string name="login">تسجيل دخول</string>
     <string name="welcome">مرحبا</string>
