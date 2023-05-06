@@ -22,6 +22,14 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         Button submitButton = findViewById(R.id.submitReg_button);
+        Button backButton = findViewById(R.id.backReg_button);
+
+        //  Sends you to the LoginActivity
+        backButton.setOnClickListener(view -> {
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
+
         submitButton.setOnClickListener(view -> {
             // Check the credentials if it's valid then move on otherwise print an error message
             String username = ((EditText) findViewById(R.id.username_reg)).getText().toString();

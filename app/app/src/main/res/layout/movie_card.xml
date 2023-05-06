@@ -73,13 +73,13 @@
 
         <ImageView
             android:id="@+id/fav_icon"
-            android:layout_width="65dp"
-            android:layout_height="51dp"
-            android:layout_marginBottom="4dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="24dp"
             android:src="@drawable/ic_favorite"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.777"
+            app:layout_constraintHorizontal_bias="0.692"
             app:layout_constraintStart_toEndOf="@+id/movie_rating" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
