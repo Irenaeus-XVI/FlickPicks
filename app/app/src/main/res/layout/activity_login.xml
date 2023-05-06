@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:layout_marginTop="70dp"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="75sp"
             android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="A Hero Can Be Anyone"
+            android:text="@string/slogan"
             android:layout_marginBottom="30dp"
             android:textAlignment="center"
             android:textColor="@color/silver"
@@ -52,10 +52,10 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
-            android:hint="Email Address"
-            android:inputType="textPersonName"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
             android:padding="10dp"
-            android:textColorHint="#858585"
+            android:textColorHint="@color/light_grey"
             android:textColor="@color/silver"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,12 +71,18 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
+            android:textAlignment="viewStart"
             android:padding="10dp"
-            android:textColorHint="#858585"
+            android:textColorHint="@color/light_grey"
             android:textColor="@color/silver"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            />
 
 
         <Button
@@ -87,8 +93,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:backgroundTint="@color/light_purple"
-            android:text="Let's Go"
-            android:textColor="#fff"
+            android:text="@string/login"
+            android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -102,7 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
-            android:text="Forgot password?"
+            android:text="@string/forgot_password"
             android:textAlignment="viewEnd"
             android:textColor="@color/silver"
             android:textSize="16sp"
@@ -117,7 +123,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="16dp"
-            android:background="#707070"
+            android:background="@color/dark_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -143,8 +149,8 @@
                 android:drawableStart="@drawable/google"
                 android:drawablePadding="10dp"
                 android:padding="10dp"
-                android:text="Google login"
-                android:textColor="#fff"
+                android:text="@string/google_login"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <Button
@@ -157,8 +163,8 @@
                 android:drawableStart="@drawable/facebook"
                 android:drawablePadding="10dp"
                 android:padding="10dp"
-                android:text="Facebook login"
-                android:textColor="#fff"
+                android:text="@string/facebook_login"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -168,11 +174,10 @@
             android:layout_height="60dp"
             android:layout_marginBottom="30dp"
             android:backgroundTint="@color/light_purple"
-            android:text="Sign up"
+            android:text="@string/sign_up"
             android:textColor="@color/white"
             android:textSize="28sp"
             android:translationY="10dp" />
-
     </LinearLayout>
 
 

@@ -1,8 +1,14 @@
 
 package com.example.app.Adapters;
 
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.app.Model.Movie;
+import com.example.app.NotificationJobService;
 import com.example.app.R;
 
 import java.util.List;
@@ -23,6 +30,10 @@ import java.util.List;
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
 
     private List<Movie> movieList;
+    private JobScheduler mScheduler;
+    private static final int JOB_ID = 0;
+    private Context mContext;
+    public static final String EXTRA_IS_FAVORITE = "is_favorite";
 
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
         // view holder code
@@ -45,8 +56,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     }
 
 
-    public MovieAdapter(List<Movie> movieList) {
+    public MovieAdapter(Context context, List<Movie> movieList) {
+        this.mContext = context;
         this.movieList = movieList;
+        this.mScheduler = (JobScheduler) mContext.getSystemService(Context.JOB_SCHEDULER_SERVICE);
     }
 
     public void setMovieList(List<Movie> movieList) {
@@ -78,9 +91,25 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
                 if (!isFav) {
                     favIcon.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
                     isFav = true;
+                    PersistableBundle extras = new PersistableBundle();
+                    extras.putBoolean(EXTRA_IS_FAVORITE, isFav);
+
+                    ComponentName serviceName = new ComponentName(mContext.getPackageName(),
+                            NotificationJobService.class.getName());
+                    JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceName).setExtras(extras);;
+                    JobInfo myJobInfo = builder.build();
+                    mScheduler.schedule(myJobInfo);
                 } else {
                     favIcon.setColorFilter(Color.parseColor("grey"), PorterDuff.Mode.SRC_IN);
                     isFav = false;
+                    PersistableBundle extras = new PersistableBundle();
+                    extras.putBoolean(EXTRA_IS_FAVORITE, isFav);
+
+                    ComponentName serviceName = new ComponentName(mContext.getPackageName(),
+                            NotificationJobService.class.getName());
+                    JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceName).setExtras(extras);
+                    JobInfo myJobInfo = builder.build();
+                    mScheduler.schedule(myJobInfo);
                 }
             }
         });

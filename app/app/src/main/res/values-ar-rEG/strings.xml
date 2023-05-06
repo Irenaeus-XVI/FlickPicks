@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FlickPicks</string>
+    <string name="api_key">b7ca164ab0ab4a69e49598ce3691ef8e</string>
+    <string name="slogan">أي شخص يمكن أن يصبح بطلآ</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="lets_go">ابدأ الآن</string>
+    <string name="forgot_password">نسيت كلمة المرور؟</string>
+    <string name="google_login">حساب جوجل</string>
+    <string name="facebook_login">حساب فيسبوك</string>
+    <string name="sign_up">إنشاء حساب جديد</string>
+    <string name="slogan2">بوابتك لملجأ السينما</string>
+    <string name="name">اسم المستخدم</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="have_account">تسجيل الدخول</string>
+    <string name="sign_up2">إنشاء حساب</string>
+    <string name="login">تسجيل دخول</string>
+    <string name="welcome">مرحبا</string>
+    <string name="update">حفظ</string>
+    <string name="movie_title">" العنوان"</string>
+    <string name="movie_description">الوصف</string>
+</resources>
