@@ -10,8 +10,8 @@
 
     <LinearLayout
         android:id="@+id/linear_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="405dp"
+        android:layout_height="727dp"
         android:background="@drawable/background_intro"
         android:gravity="center"
         android:orientation="vertical"
@@ -83,9 +83,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/white_btn"
-            android:layout_marginTop="16dp"
             android:text="Let's Go"
             android:textColor="#000"
             android:textSize="24sp"
@@ -163,15 +163,15 @@
 
         <Button
             android:id="@+id/gotoReg_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="347dp"
+            android:layout_height="81dp"
             android:layout_margin="30dp"
             android:layout_marginTop="32dp"
             android:background="@drawable/roundedcorner"
             android:padding="16dp"
-            android:textSize="20sp"
             android:text="Registration"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
     </LinearLayout>
 

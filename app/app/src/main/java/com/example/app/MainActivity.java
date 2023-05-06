@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         prefHandler = new PreferenceHandler(this);
-        prefHandler.setLoggedIn(false);
         prefHandler.setEmail("none");
         //creating the boradcast reciever
         broadcastReceiver = new checkConnection();
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAvailable(Network network) {
                 // Network is now available
-                if(prefHandler.getLoggedIn()) {
+                if(prefHandler.getEmail().equals("none")) {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
