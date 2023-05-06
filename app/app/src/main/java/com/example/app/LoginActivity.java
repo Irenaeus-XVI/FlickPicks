@@ -87,7 +87,6 @@ public class LoginActivity extends AppCompatActivity {
 
         // Saving the user's email in the shared preferences
         prefHandler.setEmail(user.getEmail());
-        prefHandler.setLoggedIn(true);
 
         // Navigating to main activity
         Intent intent = new Intent(LoginActivity.this, UpdateUserActivity.class);
