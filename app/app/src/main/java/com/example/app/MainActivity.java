@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         prefHandler = new PreferenceHandler(this);
         prefHandler.setLoggedIn(false);
-
+        prefHandler.setEmail("none");
         //creating the boradcast reciever
         broadcastReceiver = new checkConnection();
 
