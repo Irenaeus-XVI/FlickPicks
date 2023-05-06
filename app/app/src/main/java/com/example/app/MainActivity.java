@@ -22,6 +22,7 @@ import com.example.app.Retrofit.PreferenceHandler;
 public class MainActivity extends AppCompatActivity {
 
     PreferenceHandler prefHandler;
+    private checkConnection broadcastReceiver;
     private ConnectivityManager.NetworkCallback networkCallback;
 
     @Override
@@ -30,12 +31,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         prefHandler = new PreferenceHandler(this);
-        prefHandler.setEmail("none");
+        //creating the boradcast reciever
+        broadcastReceiver = new checkConnection();
 
         //creating a connectivity manager
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        //creating network callbacks that let us keep track of the state of the network, since ConnecitivtyManager.CONNECTIVITY_ACTION is deprecated
+        //check if network is available
+        NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
+        boolean isConnected = capabilities != null && capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET);
+
+        if (isConnected) {
+            if (prefHandler.getEmail().equals("none")) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(MainActivity.this, MovieListActivity.class);
+                startActivity(intent);
+            }
+        } else {
+            Intent intent = new Intent(MainActivity.this, No_Internet_Activity.class);
+            startActivity(intent);
+        }
+
+        //creating network callbacks that let us keep track of the state of the network, since ConnecitivtyManager.CONNECTIVITY_ACTION is depricated
         networkCallback = new ConnectivityManager.NetworkCallback() {
             @Override
             public void onAvailable(Network network) {
@@ -57,14 +76,21 @@ public class MainActivity extends AppCompatActivity {
             public void onLost(Network network) {
                 // Network is no longer available
                 Toast.makeText(MainActivity.this, "No Internet", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, UpdateUserActivity.class);
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         };
 
         //the registration of the connectivity manager (instead of usually registering the broadcast receiver
         //I added the permissions for this type of Broad cast in the manifest file
-        connectivityManager.registerDefaultNetworkCallback(networkCallback);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            connectivityManager.registerDefaultNetworkCallback(networkCallback);
+        } else {
+            NetworkRequest networkRequest = new NetworkRequest.Builder()
+                    .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                    .build();
+            connectivityManager.registerNetworkCallback(networkRequest, networkCallback);
+        }
     }
 
     @Override

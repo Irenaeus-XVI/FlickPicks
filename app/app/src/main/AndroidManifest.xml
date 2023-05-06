@@ -17,6 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         tools:targetApi="31">
+        <activity
+            android:name=".No_Internet_Activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <service
             android:name=".NotificationJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
@@ -32,7 +40,6 @@
         <activity
             android:name=".UpdateUserActivity"
             android:exported="false" />
-
         <activity
             android:name=".MovieListActivity"
             android:exported="false">
