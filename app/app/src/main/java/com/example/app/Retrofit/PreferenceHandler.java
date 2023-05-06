@@ -23,6 +23,9 @@ public class PreferenceHandler {
         editor.putBoolean("loggedIn", loggedIn);
         editor.apply();
     }
+    public boolean getLoggedIn() {
+        return pref.getBoolean("loggedIn", false);
+    }
 
     public String getEmail() {
         return pref.getString(PREF_EMAIL, "");
