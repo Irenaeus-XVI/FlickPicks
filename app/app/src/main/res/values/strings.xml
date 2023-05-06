@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">FlickPicks</string>
     <string name="api_key">b7ca164ab0ab4a69e49598ce3691ef8e</string>
+    <string name="slogan">A Hero Can Be Anyone</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="lets_go">Let\'s Go</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="google_login">Google</string>
+    <string name="facebook_login">Facebook</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="slogan2">A Gateway To Movie Heaven</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="have_account">Already have an Account? Login</string>
+    <string name="sign_up2">Sign Up</string>
+    <string name="login">Log In</string>
+    <string name="welcome">Welcome</string>
+    <string name="update">Update</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="movie_description">Movie Description</string>
 </resources>

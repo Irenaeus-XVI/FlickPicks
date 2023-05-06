@@ -22,19 +22,19 @@
                 android:id="@+id/updatepw_in"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter your password" />
+                android:hint="@string/password" />
 
             <EditText
                 android:id="@+id/updatepwConfirm_in"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter your password again" />
+                android:hint="@string/confirm_password" />
 
             <Button
                 android:id="@+id/update_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Update" />
+                android:text="@string/update" />
 
         </LinearLayout>
     </ScrollView>
