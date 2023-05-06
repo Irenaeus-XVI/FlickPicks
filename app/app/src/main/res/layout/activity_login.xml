@@ -53,7 +53,7 @@
             android:layout_marginEnd="32dp"
             android:ems="10"
             android:hint="@string/email"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:padding="10dp"
             android:textColorHint="@color/light_grey"
             android:textColor="@color/silver"
@@ -73,10 +73,16 @@
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
+            android:textAlignment="viewStart"
             android:padding="10dp"
             android:textColorHint="@color/light_grey"
             android:textColor="@color/silver"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            />
 
 
         <Button

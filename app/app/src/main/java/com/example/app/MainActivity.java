@@ -22,7 +22,6 @@ import com.example.app.Retrofit.PreferenceHandler;
 public class MainActivity extends AppCompatActivity {
 
     PreferenceHandler prefHandler;
-    private checkConnection broadcastReceiver;
     private ConnectivityManager.NetworkCallback networkCallback;
 
     @Override
@@ -31,13 +30,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         prefHandler = new PreferenceHandler(this);
-        //creating the boradcast reciever
-        broadcastReceiver = new checkConnection();
+        prefHandler.setEmail("none");
 
         //creating a connectivity manager
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        //creating network callbacks that let us keep track of the state of the network, since ConnecitivtyManager.CONNECTIVITY_ACTION is depricated
+        //creating network callbacks that let us keep track of the state of the network, since ConnecitivtyManager.CONNECTIVITY_ACTION is deprecated
         networkCallback = new ConnectivityManager.NetworkCallback() {
             @Override
             public void onAvailable(Network network) {
@@ -59,21 +57,14 @@ public class MainActivity extends AppCompatActivity {
             public void onLost(Network network) {
                 // Network is no longer available
                 Toast.makeText(MainActivity.this, "No Internet", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent = new Intent(MainActivity.this, UpdateUserActivity.class);
                 startActivity(intent);
             }
         };
 
         //the registration of the connectivity manager (instead of usually registering the broadcast receiver
         //I added the permissions for this type of Broad cast in the manifest file
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            connectivityManager.registerDefaultNetworkCallback(networkCallback);
-        } else {
-            NetworkRequest networkRequest = new NetworkRequest.Builder()
-                    .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-                    .build();
-            connectivityManager.registerNetworkCallback(networkRequest, networkCallback);
-        }
+        connectivityManager.registerDefaultNetworkCallback(networkCallback);
     }
 
     @Override

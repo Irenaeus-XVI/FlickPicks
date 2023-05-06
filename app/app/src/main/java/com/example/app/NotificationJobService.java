@@ -38,22 +38,19 @@ public class NotificationJobService extends JobService {
 
         // Notification channels are only available in OREO and higher.
         // So, add a check on the SDK version.
-        if (android.os.Build.VERSION.SDK_INT >=
-                android.os.Build.VERSION_CODES.O) {
 
-            // Create the NotificationChannel with all the parameters.
-            NotificationChannel notificationChannel = new NotificationChannel
-                    (PRIMARY_CHANNEL_ID,
-                            "Job Service notification",
-                            NotificationManager.IMPORTANCE_HIGH);
+        // Create the NotificationChannel with all the parameters.
+        NotificationChannel notificationChannel = new NotificationChannel
+                (PRIMARY_CHANNEL_ID,
+                        "Job Service notification",
+                        NotificationManager.IMPORTANCE_HIGH);
 
-            notificationChannel.enableLights(true);
-            notificationChannel.setLightColor(Color.RED);
-            notificationChannel.enableVibration(true);
-            notificationChannel.setDescription
-                    ("Notifications from Job Service");
-            mNotifyManager.createNotificationChannel(notificationChannel);
-        }
+        notificationChannel.enableLights(true);
+        notificationChannel.setLightColor(Color.RED);
+        notificationChannel.enableVibration(true);
+        notificationChannel.setDescription
+                ("Notifications from Job Service");
+        mNotifyManager.createNotificationChannel(notificationChannel);
     }
 
 

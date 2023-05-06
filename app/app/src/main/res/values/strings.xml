@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">FlickPicks</string>
-    <string name="api_key">b7ca164ab0ab4a69e49598ce3691ef8e</string>
+    <string name="api_key" translatable="false">b7ca164ab0ab4a69e49598ce3691ef8e</string>
     <string name="slogan">A Hero Can Be Anyone</string>
     <string name="email">Email Address</string>
     <string name="password">Password</string>
