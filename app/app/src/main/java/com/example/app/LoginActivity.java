@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
         prefHandler.setEmail(user.getEmail());
 
         // Navigating to main activity
-        Intent intent = new Intent(LoginActivity.this, UpdateUserActivity.class);
+        Intent intent = new Intent(LoginActivity.this, MovieListActivity.class);
         startActivity(intent);
     }
 
