@@ -7,10 +7,10 @@
     <string name="password">كلمة المرور</string>
     <string name="lets_go">ابدأ الآن</string>
     <string name="forgot_password">نسيت كلمة المرور؟</string>
-    <string name="google_login">حساب جوجل</string>
-    <string name="facebook_login">حساب فيسبوك</string>
+    <string name="google_login">جوجل</string>
+    <string name="facebook_login">فيسبوك</string>
     <string name="sign_up">إنشاء حساب جديد</string>
-    <string name="slogan2">بوابتك لملجأ السينما</string>
+    <string name="slogan2">بوابتك لعالم السينما</string>
     <string name="name">اسم المستخدم</string>
     <string name="confirm_password">تأكيد كلمة المرور</string>
     <string name="have_account">تسجيل الدخول</string>

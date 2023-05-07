@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         prefHandler = new PreferenceHandler(this);
+        prefHandler.setEmail("none");
 
         //creating a connectivity manager
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
