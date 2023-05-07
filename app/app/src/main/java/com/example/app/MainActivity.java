@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         prefHandler = new PreferenceHandler(this);
-        prefHandler.setEmail("none");
+//        prefHandler.setEmail("none");
 
         //creating a connectivity manager
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                 } else {
-                    Intent intent = new Intent(MainActivity.this, MovieListActivity.class);
+                    Intent intent = new Intent(MainActivity.this, ContributionActivity.class);
                     startActivity(intent);
                 }
 

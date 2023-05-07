@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,15 +19,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:cardBackgroundColor="@android:color/white"
-            android:cardCornerRadius="8dp"
-            android:cardElevation="100dp"
-            android:layout_constraintTop_toTopOf="parent"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="100dp"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="6dp"
             >
 
             <LinearLayout
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -43,7 +44,6 @@
                         android:layout_width="103dp"
                         android:layout_height="100dp"
                         android:background="@drawable/round_image"
-
                         android:src="@drawable/ehab"
 
                         />
@@ -70,7 +70,6 @@
                         android:layout_height="wrap_content"
                         android:text="GitHub"
                         android:clickable="true"
-
                         android:contentDescription="Irenaeus-XVI"
                         android:textSize="14sp"
                         android:textStyle="italic"/>
@@ -84,10 +83,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-
-            android:cardCornerRadius="8dp"
-            android:cardElevation="100dp"
-            android:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="100dp"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="6dp"
             >
 
@@ -147,10 +145,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-
-            android:cardCornerRadius="8dp"
-            android:cardElevation="100dp"
-            android:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="100dp"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="6dp"
             >
 
@@ -159,8 +156,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#FFFFFF"
-                android:padding="16dp"
-                xmlns:app="http://schemas.android.com/apk/res-auto">
+                android:padding="16dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="103dp"
@@ -210,10 +206,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-
-            android:cardCornerRadius="8dp"
-            android:cardElevation="100dp"
-            android:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="100dp"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="6dp"
             >
 
@@ -222,14 +217,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="16dp"
-                android:background="#FFFFFF"
-                xmlns:app="http://schemas.android.com/apk/res-auto">
+                android:background="#FFFFFF">
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="103dp"
                     android:layout_height="100dp"
-                    app:cardCornerRadius = "50sp"
-
-                    >
+                    app:cardCornerRadius = "50sp">
 
                     <ImageView
                         android:id="@+id/profile_image_4"
@@ -274,10 +267,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-
-            android:cardCornerRadius="8dp"
-            android:cardElevation="100dp"
-            android:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="100dp"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="6dp"
             >
 
@@ -286,15 +278,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#FFFFFF"
-                android:padding="16dp"
-                xmlns:app="http://schemas.android.com/apk/res-auto">
+                android:padding="16dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="103dp"
                     android:layout_height="100dp"
-                    app:cardCornerRadius = "50sp"
-
-                    >
+                    app:cardCornerRadius = "50sp">
 
                     <ImageView
                         android:id="@+id/profile_image_5"
@@ -311,8 +300,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="16dp"
-                    android:orientation="vertical"
-                    xmlns:app="http://schemas.android.com/apk/res-auto">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/contributor_name_5"
