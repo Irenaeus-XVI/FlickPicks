@@ -91,6 +91,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
                 if (!isFav) {
                     favIcon.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
                     isFav = true;
+
                     PersistableBundle extras = new PersistableBundle();
                     extras.putBoolean(EXTRA_IS_FAVORITE, isFav);
 

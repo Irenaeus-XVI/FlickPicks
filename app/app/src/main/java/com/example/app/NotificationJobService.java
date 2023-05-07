@@ -62,7 +62,7 @@ public class NotificationJobService extends JobService {
 
         // Set up the notification content intent to launch the app when clicked.
         PendingIntent contentPendingIntent = PendingIntent.getActivity
-                (this, 0, new Intent(this, MainActivity.class),
+                (this, 0, new Intent(this, MovieListActivity.class),
                         PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         PersistableBundle extras = jobParameters.getExtras();

@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                 } else {
-                    Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                    Intent intent = new Intent(MainActivity.this, MovieListActivity.class);
                     startActivity(intent);
                 }
 

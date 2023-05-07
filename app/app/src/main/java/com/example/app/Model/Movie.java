@@ -21,11 +21,14 @@ public class Movie {
     @SerializedName("vote_average")
     private float voteAverage;
 
-    public Movie(String title, String posterPath, String overview, float voteAverage) {
+    private boolean isFavorite;
+
+    public Movie(String title, String posterPath, String overview, float voteAverage, boolean isFavorite) {
         this.title = title;
         this.posterPath = posterPath;
         this.overview = overview;
         this.voteAverage = voteAverage;
+        this.isFavorite = isFavorite;
     }
 
     public String getTitle() {
@@ -58,6 +61,14 @@ public class Movie {
 
     public void setVoteAverage(float voteAverage) {
         this.voteAverage = voteAverage;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
     }
 
 }
