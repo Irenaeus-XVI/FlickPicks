@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_movie_24"
+        android:title="Movies" />
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/ic_baseline_tv_24"
+        android:title="Tv" />
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profile" />
+</menu>

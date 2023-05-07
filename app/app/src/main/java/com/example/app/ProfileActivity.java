@@ -1,15 +1,18 @@
 package com.example.app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.app.Retrofit.PreferenceHandler;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -74,7 +77,36 @@ public class ProfileActivity extends AppCompatActivity {
 
         });
 
+
+
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
+        bottomNav.setSelectedItemId(R.id.nav_profile);
+
+        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                // Handle navigation item clicks here
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        Intent profileintent = new Intent(ProfileActivity.this,MovieListActivity.class);
+                        startActivity(profileintent);
+                        break;
+                    case R.id.nav_search:
+                        Intent tvIntent = new Intent(ProfileActivity.this, TvListActivity.class);
+                        startActivity(tvIntent);
+                        break;
+                    case R.id.nav_profile:
+                        // Handle profile click
+
+                        break;
+                }
+                return true;
+            }
+        });
     }
+
+
 
     private boolean checkPW(String pw, String pwConfirm) {
         if (pw.length() > 20 || pw.length() < 4) {

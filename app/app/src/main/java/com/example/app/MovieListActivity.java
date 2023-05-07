@@ -1,11 +1,13 @@
 package com.example.app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.app.Adapters.MovieAdapter;
@@ -14,6 +16,7 @@ import com.example.app.Model.MovieApiService;
 import com.example.app.Response.MovieResponse;
 import com.example.app.Retrofit.PreferenceHandler;
 import com.example.app.Retrofit.RetrofitClientInstance;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +40,7 @@ public class MovieListActivity extends AppCompatActivity {
         PreferenceHandler prefHandler = new PreferenceHandler(this);
 
         // If the user is logged out he can't go to the profile page
-        if(prefHandler.getEmail().equals("none")) {
+        if (prefHandler.getEmail().equals("none")) {
             Intent intent = new Intent(MovieListActivity.this, LoginActivity.class);
             startActivity(intent);
         }
@@ -50,7 +53,35 @@ public class MovieListActivity extends AppCompatActivity {
         movieRecyclerView.setAdapter(movieAdapter);
 
         getPopularMovies();
+
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
+        bottomNav.setSelectedItemId(R.id.nav_home);
+
+        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                // Handle navigation item clicks here
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        break;
+                    case R.id.nav_search:
+                        Intent tvIntent = new Intent(MovieListActivity.this, TvListActivity.class);
+                        startActivity(tvIntent);
+                        break;
+                    case R.id.nav_profile:
+                        // Handle profile click
+                        Intent profileintent = new Intent(MovieListActivity.this,ProfileActivity.class);
+                        startActivity(profileintent);
+                        break;
+                }
+                return true;
+            }
+        });
     }
+
+
+
 
     private void getPopularMovies() {
         MovieApiService movieApiService = RetrofitClientInstance.getRetrofitInstance().create(MovieApiService.class);
