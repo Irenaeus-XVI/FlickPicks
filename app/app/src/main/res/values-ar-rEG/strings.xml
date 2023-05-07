@@ -28,4 +28,5 @@
     <string name="profile_pw">تغيير كلمة المرور</string>
     <string name="updatepw_in">ادخل كلمة المرور</string>
     <string name="updatepwConfirm_in">أكد كلمة المرور</string>
+    <string name="no_internet_connection">لا يوجد اتصال بالانترنت</string>
 </resources>

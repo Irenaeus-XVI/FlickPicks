@@ -42,7 +42,7 @@
         </activity>
 
         <activity
-            android:name=".UpdateUserActivity"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".MovieListActivity"
