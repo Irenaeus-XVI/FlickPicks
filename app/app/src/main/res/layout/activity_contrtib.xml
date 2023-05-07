@@ -1,263 +1,343 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity_contrtib">
+    android:layout_height="match_parent">
 
     <LinearLayout
+        android:padding = "10dp"
         android:layout_width="match_parent"
-        android:layout_height="764dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:background="@color/blue_grey"
+        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contributors"
-            android:textSize="27sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="30dp"/>
-        <!-- Section 1 -->
-        <LinearLayout
+        <!-- Add the card view code here -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movie_card_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:padding="16dp">
-
-            <!-- Profile Picture -->
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/circle_shape"
-                android:scaleType="centerCrop"
-                android:src="@drawable/pprod" />
-
+            android:layout_marginTop="8dp"
+            android:cardBackgroundColor="@android:color/white"
+            android:cardCornerRadius="8dp"
+            android:cardElevation="100dp"
+            android:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="6dp"
+            >
 
             <LinearLayout
-                android:layout_width="0dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:paddingStart="16dp">
+                android:orientation="horizontal"
+                android:background="#FFFFFF"
+                android:padding="16dp">
 
-                <!-- Name -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ehab Tarek"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="103dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius = "50sp"
+                    >
 
-                <!-- Link -->
-                <TextView
-                    android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="103dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/round_image"
+
+                        android:src="@drawable/ehab"
+
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:onClick="openLink"
-                    android:text="Github"
-                    android:textColor="#007AFF"
-                    android:contentDescription="githubprofile"/>
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/contributor_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ehab Tarek"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/contributor_github"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="GitHub"
+                        android:clickable="true"
+
+                        android:contentDescription="Irenaeus-XVI"
+                        android:textSize="14sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
-
-        <!-- Section 2 -->
-        <LinearLayout
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movie_card_view_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:layout_marginTop="8dp"
 
-            <!-- Profile Picture -->
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/circle_shape"
-                android:scaleType="centerCrop"
-                android:src="@drawable/pprod" />
-
+            android:cardCornerRadius="8dp"
+            android:cardElevation="100dp"
+            android:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="6dp"
+            >
 
             <LinearLayout
-                android:layout_width="0dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:paddingStart="16dp">
+                android:orientation="horizontal"
+                android:background="#FFFFFF"
+                android:padding="16dp">
 
-                <!-- Name -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ahmad Khaled"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="103dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius = "50sp"
+                    >
 
-                <!-- Link -->
-                <TextView
-                    android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/profile_image_2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/round_image"
+                        android:src="@drawable/sav"
+                         />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:onClick="openLink"
-                    android:text="Github"
-                    android:textColor="#007AFF"
-                    android:contentDescription="githubprofile"/>
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/contributor_name_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Marawan Ayman"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/contributor_github_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Github"
+                        android:contentDescription="Savoura"
+                        android:textSize="14sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
-
-        <!-- Section 3 -->
-        <LinearLayout
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movie_card_view_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:layout_marginTop="8dp"
 
-            <!-- Profile Picture -->
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/circle_shape"
-                android:scaleType="centerCrop"
-                android:src="@drawable/pprod" />
+            android:cardCornerRadius="8dp"
+            android:cardElevation="100dp"
+            android:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="6dp"
+            >
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:paddingStart="16dp">
+                android:orientation="horizontal"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
 
-                <!-- Name -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Marawan Ayman"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="103dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius = "50sp"
+                    >
 
-                <!-- Link -->
-                <TextView
-                    android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/profile_image_3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/khaled"
+                        android:background="@drawable/round_image"
+                         />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:onClick="openLink"
-                    android:text="Github"
-                    android:textColor="#007AFF"
-                    android:contentDescription="githubprofile"/>
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/contributor_name_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ahmad Khaled"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/contributor_github_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Github"
+                        android:contentDescription="AhmedKhaleda998"
+                        android:textSize="14sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
-
-        <!-- Section 4 -->
-        <LinearLayout
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movie_card_view_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:layout_marginTop="8dp"
 
-            <!-- Profile Picture -->
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/circle_shape"
-                android:scaleType="centerCrop"
-                android:src="@drawable/pprod" />
-
+            android:cardCornerRadius="8dp"
+            android:cardElevation="100dp"
+            android:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="6dp"
+            >
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:paddingStart="16dp">
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="#FFFFFF"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="103dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius = "50sp"
 
-                <!-- Name -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Youssef Barsoom"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    />
+                    >
 
-                <!-- Link -->
-                <TextView
-                    android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/profile_image_4"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/jjj"
+                        android:background="@drawable/round_image"
+                        />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:onClick="openLink"
-                    android:text="Github"
-                    android:textColor="#007AFF"
-                    android:contentDescription="githubprofile"/>
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/contributor_name_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Youssef Barsoom"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/contributor_github_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Github"
+                        android:contentDescription="Youssefbarsoum"
+                        android:textSize="14sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
-
-        <!-- Section 5 -->
-        <LinearLayout
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movie_card_view_5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:layout_marginTop="8dp"
 
-            <!-- Profile Picture -->
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/circle_shape"
-                android:scaleType="centerCrop"
-                android:src="@drawable/pprod" />/>
+            android:cardCornerRadius="8dp"
+            android:cardElevation="100dp"
+            android:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="6dp"
+            >
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:paddingStart="16dp">
+                android:orientation="horizontal"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
 
-                <!-- Name -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ahmad Abdelsalam"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="103dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius = "50sp"
 
-                <!-- Link -->
-                <TextView
-                    android:layout_width="match_parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/profile_image_5"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ahmad"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/round_image"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:onClick="openLink"
-                    android:text="Github"
-                    android:textColor="#007AFF"
-                    android:contentDescription="stableAhmad"/>
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical"
+                    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                    <TextView
+                        android:id="@+id/contributor_name_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ahmad Abdelsalam"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/contributor_github_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Github"
+                        android:contentDescription="stableAhmad"
+                        android:textSize="14sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
+        <!-- Add more card views here to create a list of contributors -->
 
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
