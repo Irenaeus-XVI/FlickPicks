@@ -1,10 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_movie"
         android:icon="@drawable/ic_baseline_movie_24"
         android:title="Movies" />
     <item
-        android:id="@+id/nav_search"
+        android:id="@+id/nav_tv"
         android:icon="@drawable/ic_baseline_tv_24"
         android:title="Tv" />
     <item

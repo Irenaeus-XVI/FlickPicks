@@ -85,11 +85,11 @@ public class ProfileActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 // Handle navigation item clicks here
                 switch (item.getItemId()) {
-                    case R.id.nav_home:
+                    case R.id.nav_movie:
                         Intent profileintent = new Intent(ProfileActivity.this, MovieListActivity.class);
                         startActivity(profileintent);
                         break;
-                    case R.id.nav_search:
+                    case R.id.nav_tv:
                         Intent tvIntent = new Intent(ProfileActivity.this, TvListActivity.class);
                         startActivity(tvIntent);
                         break;

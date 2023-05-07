@@ -56,16 +56,16 @@ public class MovieListActivity extends AppCompatActivity {
 
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
-        bottomNav.setSelectedItemId(R.id.nav_home);
+        bottomNav.setSelectedItemId(R.id.nav_movie);
 
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 // Handle navigation item clicks here
                 switch (item.getItemId()) {
-                    case R.id.nav_home:
+                    case R.id.nav_movie:
                         break;
-                    case R.id.nav_search:
+                    case R.id.nav_tv:
                         Intent tvIntent = new Intent(MovieListActivity.this, TvListActivity.class);
                         startActivity(tvIntent);
                         break;

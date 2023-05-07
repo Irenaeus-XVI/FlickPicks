@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/blue_grey"
+    android:padding="10dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/blue_grey"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="match_parent">
 
-        <!-- Add the card view code here -->
         <androidx.cardview.widget.CardView
             android:id="@+id/movie_card_view"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:layout_marginTop="16dp"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
@@ -40,9 +41,7 @@
                         android:layout_width="103dp"
                         android:layout_height="100dp"
                         android:background="@drawable/round_image"
-                        android:src="@drawable/ehab"
-
-                        />
+                        android:src="@drawable/ehab" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -79,13 +78,15 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/movie_card_view_2"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:layout_marginTop="8dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="100dp"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/movie_card_view">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -105,7 +106,6 @@
                         android:layout_height="100dp"
                         android:background="@drawable/round_image"
                         android:src="@drawable/sav" />
-
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
@@ -116,7 +116,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/contributor_name_2"
+                        android:id="@+id/contributor_name2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Marwan Ayman"
@@ -124,7 +124,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/contributor_github_2"
+                        android:id="@+id/contributor_github2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:clickable="true"
@@ -134,20 +134,21 @@
                         android:textSize="16sp"
                         android:textStyle="italic" />
                 </LinearLayout>
-
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
+
         <androidx.cardview.widget.CardView
             android:id="@+id/movie_card_view_3"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
-            android:layout_marginTop="8dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="100dp"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_card_view_2">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,7 +168,6 @@
                         android:layout_height="100dp"
                         android:background="@drawable/round_image"
                         android:src="@drawable/khaled" />
-
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
@@ -178,38 +178,40 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/contributor_name_3"
+                        android:id="@+id/contributor_name3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ahmad Khaled"
+                        android:text="Ahmed Khaled"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/contributor_github_3"
+                        android:id="@+id/contributor_github3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:clickable="true"
-                        android:contentDescription="AhmedKhaleda998"
+                        android:contentDescription="ahmedkhaleda998
+"
                         android:onClick="openLink"
                         android:text="Github"
                         android:textSize="16sp"
                         android:textStyle="italic" />
                 </LinearLayout>
-
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
+
         <androidx.cardview.widget.CardView
             android:id="@+id/movie_card_view_4"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
-            android:layout_marginTop="8dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="100dp"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_card_view_3">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -229,8 +231,6 @@
                         android:layout_height="100dp"
                         android:background="@drawable/round_image"
                         android:src="@drawable/jjj" />
-
-
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
@@ -241,15 +241,15 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/contributor_name_4"
+                        android:id="@+id/contributor_name4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Youssef Barsoom"
+                        android:text="Youssef Barsom "
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/contributor_github_4"
+                        android:id="@+id/contributor_github4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:clickable="true"
@@ -259,23 +259,24 @@
                         android:textSize="16sp"
                         android:textStyle="italic" />
                 </LinearLayout>
-
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
+
         <androidx.cardview.widget.CardView
             android:id="@+id/movie_card_view_5"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
-            android:layout_marginTop="8dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="100dp"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_card_view_4">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:orientation="horizontal"
@@ -291,9 +292,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:background="@drawable/round_image"
-                        android:scaleType="centerCrop"
                         android:src="@drawable/ahmad" />
-
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
@@ -304,16 +303,16 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/contributor_name_5"
+                        android:id="@+id/contributor_name5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ahmad Abdelsalam"
+                        android:text="Ahmed Abd Elsalam "
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/contributor_github_5"
-                        android:layout_width="match_parent"
+                        android:id="@+id/contributor_github5"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:clickable="true"
                         android:contentDescription="stableAhmad"
@@ -322,13 +321,23 @@
                         android:textSize="16sp"
                         android:textStyle="italic" />
                 </LinearLayout>
-
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
-        <!-- Add more card views here to create a list of contributors -->
 
-    </LinearLayout>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="8dp"
+            android:background="@color/blue_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_card_view_5"
+            app:menu="@menu/bottom_nav_menu" />
 
-</ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

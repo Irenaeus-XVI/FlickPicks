@@ -53,18 +53,18 @@ public class TvListActivity extends AppCompatActivity {
         getPopularMovies();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
-        bottomNav.setSelectedItemId(R.id.nav_search);
+        bottomNav.setSelectedItemId(R.id.nav_tv);
 
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 // Handle navigation item clicks here
                 switch (item.getItemId()) {
-                    case R.id.nav_home:
+                    case R.id.nav_movie:
                         Intent movieIntent = new Intent(TvListActivity.this, MovieListActivity.class);
                         startActivity(movieIntent);
                         break;
-                    case R.id.nav_search:
+                    case R.id.nav_tv:
                         break;
                     case R.id.nav_profile:
                         // Handle profile click
