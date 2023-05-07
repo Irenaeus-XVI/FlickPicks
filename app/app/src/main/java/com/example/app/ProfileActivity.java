@@ -45,6 +45,11 @@ public class ProfileActivity extends AppCompatActivity {
         Button contributersButton = findViewById(R.id.contributers_btn);
         Button logOut = findViewById(R.id.logout_btn);
 
+        contributersButton.setOnClickListener(view -> {
+            Intent intent = new Intent(ProfileActivity.this, ContributionActivity.class);
+            startActivity(intent);
+        });
+
         logOut.setOnClickListener(view -> {
             // Setting the email to none will log the user out
             prefHandler.setEmail("none");
