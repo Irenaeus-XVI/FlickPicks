@@ -18,7 +18,7 @@
             android:id="@+id/movie_card_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="100dp"
@@ -66,12 +66,13 @@
 
                     <TextView
                         android:id="@+id/contributor_github"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="GitHub"
+                        android:text="Github"
                         android:clickable="true"
+                        android:onClick="openLink"
                         android:contentDescription="Irenaeus-XVI"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="italic"/>
                 </LinearLayout>
 
@@ -83,14 +84,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardCornerRadius="8dp"
+            app:cardCornerRadius="16dp"
             app:cardElevation="100dp"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="6dp"
             >
 
             <LinearLayout
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -123,17 +123,19 @@
                         android:id="@+id/contributor_name_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Marawan Ayman"
+                        android:text="Marwan Ayman"
                         android:textSize="18sp"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:id="@+id/contributor_github_2"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Github"
+                        android:clickable="true"
+                        android:onClick="openLink"
                         android:contentDescription="Savoura"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="italic"/>
                 </LinearLayout>
 
@@ -145,7 +147,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardCornerRadius="8dp"
+            app:cardCornerRadius="16dp"
             app:cardElevation="100dp"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="6dp"
@@ -193,8 +195,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Github"
+                        android:clickable="true"
+                        android:onClick="openLink"
                         android:contentDescription="AhmedKhaleda998"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="italic"/>
                 </LinearLayout>
 
@@ -206,7 +210,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardCornerRadius="8dp"
+            app:cardCornerRadius="16dp"
             app:cardElevation="100dp"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="6dp"
@@ -254,8 +258,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Github"
+                        android:clickable="true"
+                        android:onClick="openLink"
                         android:contentDescription="Youssefbarsoum"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="italic"/>
                 </LinearLayout>
 
@@ -267,7 +273,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardCornerRadius="8dp"
+            app:cardCornerRadius="16dp"
             app:cardElevation="100dp"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="6dp"
@@ -315,8 +321,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Github"
+                        android:clickable="true"
+                        android:onClick="openLink"
                         android:contentDescription="stableAhmad"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="italic"/>
                 </LinearLayout>
 

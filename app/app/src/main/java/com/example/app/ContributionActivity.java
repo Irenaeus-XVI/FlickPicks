@@ -14,14 +14,6 @@ public class ContributionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contrtibution);
-
-        TextView myTextView = findViewById(R.id.contributor_github);
-        myTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLink(v);
-            }
-        });
     }
     public void openLink(View view) {
         String profile = view.getContentDescription().toString();
