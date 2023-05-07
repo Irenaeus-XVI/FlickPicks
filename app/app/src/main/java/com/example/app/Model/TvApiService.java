@@ -1,7 +1,6 @@
 package com.example.app.Model;
 
 
-import com.example.app.Response.MovieResponse;
 import com.example.app.Response.TvResponse;
 
 import retrofit2.Call;

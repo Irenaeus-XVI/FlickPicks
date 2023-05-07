@@ -1,10 +1,10 @@
 package com.example.app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class No_Internet_Activity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class NoInternetActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

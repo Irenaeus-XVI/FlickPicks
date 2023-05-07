@@ -22,7 +22,7 @@
             android:name=".ContributionActivity"
             android:exported="false" />
         <activity
-            android:name=".No_Internet_Activity"
+            android:name=".NoInternetActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

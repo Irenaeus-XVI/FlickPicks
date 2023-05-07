@@ -1,13 +1,13 @@
 package com.example.app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -94,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         if (db.getUser(email) != null) {
-       //    If the email is already in the database, print an error message
+            //    If the email is already in the database, print an error message
             Toast.makeText(this, "Email already used", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -112,5 +112,5 @@ public class RegisterActivity extends AppCompatActivity {
         ((EditText) findViewById(R.id.email_reg)).setText("");
         ((EditText) findViewById(R.id.pw_reg)).setText("");
         ((EditText) findViewById(R.id.pwConfirm_reg)).setText("");
-   }
+    }
 }

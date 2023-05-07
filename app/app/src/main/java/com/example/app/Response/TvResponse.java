@@ -1,7 +1,6 @@
 package com.example.app.Response;
 
 import com.example.app.Model.Tv;
-import com.example.app.Model.Movie;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;

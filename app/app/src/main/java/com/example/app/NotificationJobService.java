@@ -1,9 +1,6 @@
 package com.example.app;
 
 
-import static com.example.app.Adapters.MovieAdapter.EXTRA_IS_FAVORITE;
-
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -15,17 +12,13 @@ import android.os.PersistableBundle;
 
 import androidx.core.app.NotificationCompat;
 
-import java.security.cert.CertPathBuilder;
-
 public class NotificationJobService extends JobService {
 
     private static final String EXTRA_IS_FAVORITE = "is_favorite";
-    NotificationManager mNotifyManager;
-
     // Notification channel ID.
     private static final String PRIMARY_CHANNEL_ID =
             "primary_notification_channel";
-
+    NotificationManager mNotifyManager;
 
     /**
      * Creates a Notification channel, for OREO and higher.

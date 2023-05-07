@@ -6,7 +6,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,7 +20,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.app.Model.Tv;
-import com.example.app.Model.Tv;
 import com.example.app.NotificationJobService;
 import com.example.app.R;
 
@@ -29,29 +27,11 @@ import java.util.List;
 
 public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder> {
 
-    private List<Tv> tvShowList;
-    private JobScheduler mScheduler;
-    private static final int JOB_ID = 0;
-    private Context mContext;
     public static final String EXTRA_IS_FAVORITE = "is_favorite";
-
-    public static class TvViewHolder extends RecyclerView.ViewHolder {
-        // view holder code
-        private ImageView tvShowImage, favIcon;
-        private TextView tvShowTitle;
-        private TextView tvShowDescription;
-        private RatingBar tvShowRating;
-
-        public TvViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            tvShowImage = itemView.findViewById(R.id.tv_image);
-            tvShowTitle = itemView.findViewById(R.id.tv_title);
-            tvShowDescription = itemView.findViewById(R.id.tv_description);
-            tvShowRating = itemView.findViewById(R.id.tv_rating);
-            favIcon = itemView.findViewById(R.id.fav_icon);
-        }
-    }
+    private static final int JOB_ID = 0;
+    private final JobScheduler mScheduler;
+    private final Context mContext;
+    private List<Tv> tvShowList;
 
     public TvAdapter(Context context, List<Tv> tvShowList) {
         this.mContext = context;
@@ -123,6 +103,25 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder> {
     @Override
     public int getItemCount() {
         return tvShowList.size();
+    }
+
+    public static class TvViewHolder extends RecyclerView.ViewHolder {
+        // view holder code
+        private final ImageView tvShowImage;
+        private final ImageView favIcon;
+        private final TextView tvShowTitle;
+        private final TextView tvShowDescription;
+        private final RatingBar tvShowRating;
+
+        public TvViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            tvShowImage = itemView.findViewById(R.id.tv_image);
+            tvShowTitle = itemView.findViewById(R.id.tv_title);
+            tvShowDescription = itemView.findViewById(R.id.tv_description);
+            tvShowRating = itemView.findViewById(R.id.tv_rating);
+            favIcon = itemView.findViewById(R.id.fav_icon);
+        }
     }
 
 

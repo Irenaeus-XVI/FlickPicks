@@ -1,12 +1,12 @@
 package com.example.app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.app.Retrofit.PreferenceHandler;
 
@@ -25,14 +25,14 @@ public class LoginActivity extends AppCompatActivity {
         dbHandler = new DatabaseHandler(this);
         prefHandler = new PreferenceHandler(this);
         // Sends you to Register page when you press on Register button
-        Button registerButton =  findViewById(R.id.gotoReg_button);
+        Button registerButton = findViewById(R.id.gotoReg_button);
         registerButton.setOnClickListener(view -> {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
         });
 
         // Checks your credentials when you press on Login button
-        Button loginButton =  findViewById(R.id.login_button);
+        Button loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(view -> {
             // Get the email and password from the text fields
             String email = ((EditText) findViewById(R.id.email_in)).getText().toString();

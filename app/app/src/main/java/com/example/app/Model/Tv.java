@@ -3,9 +3,6 @@ package com.example.app.Model;
 
 import com.google.gson.annotations.SerializedName;
 
-
-import com.google.gson.annotations.SerializedName;
-
 public class Tv {
     @SerializedName("name")
     private String name;

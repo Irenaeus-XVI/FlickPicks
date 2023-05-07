@@ -1,7 +1,5 @@
 package com.example.app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -10,8 +8,9 @@ import android.net.NetworkCapabilities;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.app.Retrofit.PreferenceHandler;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.app.Retrofit.PreferenceHandler;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         } else {
-            Intent intent = new Intent(MainActivity.this, No_Internet_Activity.class);
+            Intent intent = new Intent(MainActivity.this, NoInternetActivity.class);
             startActivity(intent);
         }
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_grey"
-    tools:context=".SplashScreen.SplashActivity" >
+    tools:context=".SplashScreen.SplashActivity">
 
     <TextView
         android:id="@+id/textView2"
@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
         android:text="@string/welcome"
-        android:textSize="75sp"
         android:textColor="@color/white"
+        android:textSize="75sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,8 +48,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/buttons"
-        android:textAllCaps="false"
         android:text="@string/lets_go"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"

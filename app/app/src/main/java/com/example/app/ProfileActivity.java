@@ -1,8 +1,5 @@
 package com.example.app;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -11,6 +8,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.app.Retrofit.PreferenceHandler;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,9 +18,9 @@ import org.mindrot.jbcrypt.BCrypt;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    public TextView name, email;
     PreferenceHandler prefHandler;
     DatabaseHandler dbHandler;
-    public TextView name, email;
     String salt = BCrypt.gensalt();
 
     @Override
@@ -31,7 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
         prefHandler = new PreferenceHandler(this);
 
         // If the user is logged out he can't go to the profile page
-        if(prefHandler.getEmail().equals("none")) {
+        if (prefHandler.getEmail().equals("none")) {
             Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
             startActivity(intent);
         }
@@ -69,15 +69,12 @@ public class ProfileActivity extends AppCompatActivity {
             String pwConfirm = ((EditText) findViewById(R.id.updatepwConfirm_in)).getText().toString();
 
             // Check if the passwords match
-            if (!checkPW(pw, pwConfirm))
-                return;
+            if (!checkPW(pw, pwConfirm)) return;
 
             // Passwords match so update the user details
             updatePW(pw);
 
         });
-
-
 
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
@@ -89,7 +86,7 @@ public class ProfileActivity extends AppCompatActivity {
                 // Handle navigation item clicks here
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        Intent profileintent = new Intent(ProfileActivity.this,MovieListActivity.class);
+                        Intent profileintent = new Intent(ProfileActivity.this, MovieListActivity.class);
                         startActivity(profileintent);
                         break;
                     case R.id.nav_search:
@@ -107,13 +104,12 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
 
-
     private boolean checkPW(String pw, String pwConfirm) {
         if (pw.length() > 20 || pw.length() < 4) {
             Toast.makeText(this, "Password must be between 4 and 20 characters", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if(!pw.equals(pwConfirm)) {
+        if (!pw.equals(pwConfirm)) {
             Toast.makeText(this, "Passwords don't match!", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -145,7 +141,7 @@ public class ProfileActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void loadUser(){
+    private void loadUser() {
         // Get the user details from the database
         User user = dbHandler.getUser(prefHandler.getEmail());
         name.setText(user.getName());

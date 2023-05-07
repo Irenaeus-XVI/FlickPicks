@@ -1,14 +1,14 @@
 package com.example.app;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app.Adapters.MovieAdapter;
 import com.example.app.Model.Movie;
@@ -71,7 +71,7 @@ public class MovieListActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_profile:
                         // Handle profile click
-                        Intent profileintent = new Intent(MovieListActivity.this,ProfileActivity.class);
+                        Intent profileintent = new Intent(MovieListActivity.this, ProfileActivity.class);
                         startActivity(profileintent);
                         break;
                 }
@@ -79,8 +79,6 @@ public class MovieListActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
 
     private void getPopularMovies() {

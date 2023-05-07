@@ -1,4 +1,3 @@
-
 package com.example.app.Adapters;
 
 import android.app.job.JobInfo;
@@ -7,9 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,32 +26,11 @@ import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
 
-    private List<Movie> movieList;
-    private JobScheduler mScheduler;
-    private static final int JOB_ID = 0;
-    private Context mContext;
     public static final String EXTRA_IS_FAVORITE = "is_favorite";
-
-    public static class MovieViewHolder extends RecyclerView.ViewHolder {
-        // view holder code
-
-
-        private ImageView movieImage, favIcon;
-        private TextView movieTitle;
-        private TextView movieDescription;
-        private RatingBar movieRating;
-
-        public MovieViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            movieImage = itemView.findViewById(R.id.movie_image);
-            movieTitle = itemView.findViewById(R.id.movie_title);
-            movieDescription = itemView.findViewById(R.id.movie_description);
-            movieRating = itemView.findViewById(R.id.movie_rating);
-            favIcon = itemView.findViewById(R.id.fav_icon);
-        }
-    }
-
+    private static final int JOB_ID = 0;
+    private final JobScheduler mScheduler;
+    private final Context mContext;
+    private List<Movie> movieList;
 
     public MovieAdapter(Context context, List<Movie> movieList) {
         this.mContext = context;
@@ -97,7 +73,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
                     ComponentName serviceName = new ComponentName(mContext.getPackageName(),
                             NotificationJobService.class.getName());
-                    JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceName).setExtras(extras);;
+                    JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceName).setExtras(extras);
                     JobInfo myJobInfo = builder.build();
                     mScheduler.schedule(myJobInfo);
                 } else {
@@ -125,6 +101,27 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     @Override
     public int getItemCount() {
         return movieList.size();
+    }
+
+    public static class MovieViewHolder extends RecyclerView.ViewHolder {
+        // view holder code
+
+
+        private final ImageView movieImage;
+        private final ImageView favIcon;
+        private final TextView movieTitle;
+        private final TextView movieDescription;
+        private final RatingBar movieRating;
+
+        public MovieViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            movieImage = itemView.findViewById(R.id.movie_image);
+            movieTitle = itemView.findViewById(R.id.movie_title);
+            movieDescription = itemView.findViewById(R.id.movie_description);
+            movieRating = itemView.findViewById(R.id.movie_rating);
+            favIcon = itemView.findViewById(R.id.fav_icon);
+        }
     }
 
 

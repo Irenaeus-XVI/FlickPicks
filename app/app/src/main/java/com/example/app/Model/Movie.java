@@ -3,12 +3,6 @@ package com.example.app.Model;
 
 import com.google.gson.annotations.SerializedName;
 
-
-import com.google.gson.annotations.SerializedName;
-
-
-import com.google.gson.annotations.SerializedName;
-
 public class Movie {
     @SerializedName("title")
     private String title;

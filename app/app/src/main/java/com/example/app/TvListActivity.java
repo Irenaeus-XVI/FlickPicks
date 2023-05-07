@@ -1,21 +1,20 @@
 package com.example.app;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.widget.Toast;
-
-import com.example.app.Adapters.MovieAdapter;
 import com.example.app.Adapters.TvAdapter;
 import com.example.app.Model.Tv;
 import com.example.app.Model.TvApiService;
 import com.example.app.Response.TvResponse;
+import com.example.app.Retrofit.PreferenceHandler;
 import com.example.app.Retrofit.RetrofitClientInstance;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -36,6 +35,13 @@ public class TvListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tv_list);
+
+        PreferenceHandler prefHandler = new PreferenceHandler(this);
+
+        if (prefHandler.getEmail().equals("none")) {
+            Intent intent = new Intent(TvListActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
 
         tvRecyclerView = findViewById(R.id.tvRecyclerView);
         tvRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -62,7 +68,7 @@ public class TvListActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_profile:
                         // Handle profile click
-                        Intent profileintent = new Intent(TvListActivity.this,ProfileActivity.class);
+                        Intent profileintent = new Intent(TvListActivity.this, ProfileActivity.class);
                         startActivity(profileintent);
                         break;
                 }

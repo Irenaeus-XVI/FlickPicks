@@ -54,7 +54,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         User user = null;
         // User not found in database so return null
         if (cursor == null || cursor.getCount() == 0)
-            return user;
+            return null;
 
         // Otherwise move to first row, assign it to user and return it
         cursor.moveToFirst();
@@ -68,7 +68,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return user;
     }
 
-    public int updateUser(User user) {
+    public void updateUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
 
 
@@ -78,7 +78,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(HASHEDPW, user.getHashedPW());
 
         // Updating row
-        return db.update(TABLE_NAME, values, EMAIL + " = ?",
+        db.update(TABLE_NAME, values, EMAIL + " = ?",
                 new String[]{String.valueOf(user.getEmail())});
     }
 
