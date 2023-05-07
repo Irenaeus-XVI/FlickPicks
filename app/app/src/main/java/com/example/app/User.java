@@ -1,22 +1,22 @@
 package com.example.app;
 
 public class User {
-    String username;
+    String name;
     String email;
     String hashedPW;
 
     public User(String name, String email, String hashedPW) {
-        this.username = name;
+        this.name = name;
         this.email = email;
         this.hashedPW = hashedPW;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {

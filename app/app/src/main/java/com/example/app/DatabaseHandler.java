@@ -9,9 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "UserData.db";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
     private static final String TABLE_NAME = "Users";
-    private static final String USERNAME = "username";
+    private static final String NAME = "name";
 
     private static final String EMAIL = "email";
     private static final String HASHEDPW = "hashedpw";
@@ -23,7 +23,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME + " ("
-                + USERNAME + " TEXT ,"
+                + NAME + " TEXT ,"
                 + EMAIL + " TEXT PRIMARY KEY,"
                 + HASHEDPW + " TEXT)";
 
@@ -36,7 +36,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
 
-        values.put(USERNAME, user.getUsername());
+        values.put(NAME, user.getName());
         values.put(EMAIL, user.getEmail());
         values.put(HASHEDPW, user.getHashedPW());
 
@@ -49,7 +49,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_NAME, new String[]{
-                        USERNAME, EMAIL, HASHEDPW}, EMAIL + "=?",
+                        NAME, EMAIL, HASHEDPW}, EMAIL + "=?",
                 new String[]{String.valueOf(email)}, null, null, null, null);
         User user = null;
         // User not found in database so return null
@@ -73,7 +73,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
         ContentValues values = new ContentValues();
-        values.put(USERNAME, user.getUsername());
+        values.put(NAME, user.getName());
         values.put(EMAIL, user.getEmail());
         values.put(HASHEDPW, user.getHashedPW());
 

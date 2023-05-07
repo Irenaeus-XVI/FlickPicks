@@ -85,18 +85,19 @@
             />
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
-            android:backgroundTint="@color/light_purple"
+            android:background="@drawable/buttons"
             android:text="@string/login"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -139,28 +140,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/google_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_weight="0.5"
-                android:backgroundTint="@color/light_purple"
+                android:background="@drawable/buttons"
                 android:drawableStart="@drawable/google"
                 android:drawablePadding="10dp"
+                android:textAllCaps="false"
                 android:padding="10dp"
                 android:text="@string/google_login"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_weight="0.5"
-                android:backgroundTint="@color/light_purple"
+                android:background="@drawable/buttons"
                 android:drawableStart="@drawable/facebook"
+                android:textAllCaps="false"
                 android:drawablePadding="10dp"
                 android:padding="10dp"
                 android:text="@string/facebook_login"
@@ -168,12 +171,13 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/gotoReg_button"
             android:layout_width="340dp"
             android:layout_height="60dp"
             android:layout_marginBottom="30dp"
-            android:backgroundTint="@color/light_purple"
+            android:background="@drawable/buttons"
+            android:textAllCaps="false"
             android:text="@string/sign_up"
             android:textColor="@color/white"
             android:textSize="28sp"

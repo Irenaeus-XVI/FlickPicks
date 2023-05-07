@@ -2,17 +2,11 @@ package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.job.JobInfo;
-import android.app.job.JobScheduler;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
-import android.net.NetworkRequest;
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -22,7 +16,7 @@ import com.example.app.Retrofit.PreferenceHandler;
 public class MainActivity extends AppCompatActivity {
 
     PreferenceHandler prefHandler;
-    private checkConnection broadcastReceiver;
+    DatabaseHandler dbHandler;
     private ConnectivityManager.NetworkCallback networkCallback;
 
     @Override
@@ -31,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         prefHandler = new PreferenceHandler(this);
-        //creating the boradcast reciever
-        broadcastReceiver = new checkConnection();
 
         //creating a connectivity manager
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -62,10 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 if (prefHandler.getEmail().equals("none")) {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
-
-
                 } else {
-                    Intent intent = new Intent(MainActivity.this, MovieListActivity.class);
+                    Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                     startActivity(intent);
                 }
 
@@ -83,14 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         //the registration of the connectivity manager (instead of usually registering the broadcast receiver
         //I added the permissions for this type of Broad cast in the manifest file
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            connectivityManager.registerDefaultNetworkCallback(networkCallback);
-        } else {
-            NetworkRequest networkRequest = new NetworkRequest.Builder()
-                    .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-                    .build();
-            connectivityManager.registerNetworkCallback(networkRequest, networkCallback);
-        }
+        connectivityManager.registerDefaultNetworkCallback(networkCallback);
     }
 
     @Override

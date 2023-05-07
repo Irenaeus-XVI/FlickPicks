@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -11,6 +12,7 @@ import com.example.app.Adapters.MovieAdapter;
 import com.example.app.Model.Movie;
 import com.example.app.Model.MovieApiService;
 import com.example.app.Response.MovieResponse;
+import com.example.app.Retrofit.PreferenceHandler;
 import com.example.app.Retrofit.RetrofitClientInstance;
 
 import java.util.ArrayList;
@@ -31,6 +33,14 @@ public class MovieListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_list);
+
+        PreferenceHandler prefHandler = new PreferenceHandler(this);
+
+        // If the user is logged out he can't go to the profile page
+        if(prefHandler.getEmail().equals("none")) {
+            Intent intent = new Intent(MovieListActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
 
         movieRecyclerView = findViewById(R.id.movieRecyclerView);
         movieRecyclerView.setLayoutManager(new LinearLayoutManager(this));

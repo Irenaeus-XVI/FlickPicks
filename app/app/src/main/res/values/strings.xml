@@ -13,10 +13,18 @@
     <string name="name">Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="have_account">Already have an Account? Login</string>
-    <string name="sign_up2">Sign Up</string>
-    <string name="login">Log In</string>
+    <string name="sign_up2">Sign up</string>
+    <string name="login">Log in</string>
     <string name="welcome">Welcome</string>
     <string name="update">Update</string>
-    <string name="movie_title">Movie Title</string>
-    <string name="movie_description">Movie Description</string>
+    <string name="movie_title">Movie title</string>
+    <string name="movie_description">Movie description</string>
+    <string name="log_out">Log out</string>
+    <string name="changepw">Change password</string>
+    <string name="contirbuters">Contirbuters</string>
+    <string name="profilename">Name:</string>
+    <string name="profileemail">Email:</string>
+    <string name="profile_pw">Change your password</string>
+    <string name="updatepw_in">Enter your password</string>
+    <string name="updatepwConfirm_in">Confirm your password</string>
 </resources>

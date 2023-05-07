@@ -20,4 +20,12 @@
     <string name="update">حفظ</string>
     <string name="movie_title">" العنوان"</string>
     <string name="movie_description">الوصف</string>
+    <string name="log_out">تسجيل الخروج</string>
+    <string name="changepw">تغيير كلمة المرور</string>
+    <string name="contirbuters">المساهمين</string>
+    <string name="profilename">الاسم:</string>
+    <string name="profileemail">البريد:</string>
+    <string name="profile_pw">تغيير كلمة المرور</string>
+    <string name="updatepw_in">ادخل كلمة المرور</string>
+    <string name="updatepwConfirm_in">أكد كلمة المرور</string>
 </resources>
