@@ -23,7 +23,7 @@ To use FlickPicks, you'll need to obtain an API key from The Movie Database. Onc
 
 ## Development
 
-To develop FlickPicks further, you can add more features such as:
+To develop FlickPicks further, we added more features such as:
 
 - User authentication and registration using jBCrypt for password hashing
 - Saving user information and encrypted password  to a local SQLite database
